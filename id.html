@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Student ID</title>
+    <script>
+      function generateStudentID() {
+        const courseCode = document.getElementById("courseCode").value;
+
+        // Get current timestamp in milliseconds
+        const timestamp = new Date().getTime();
+
+        // Combine course code with timestamp
+        const studentID = `${courseCode}-${timestamp}`;
+
+        // Display the generated student ID
+        document.getElementById(
+          "result"
+        ).innerText = `Generated Student ID: ${studentID}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Student ID Generator</h1>
+
+    <label for="courseCode">Enter Course Code:</label>
+    <input type="text" id="courseCode" placeholder="e.g., CS101" />
+
+    <button onclick="generateStudentID()">Generate Student ID</button>
+
+    <p id="result"></p>
+  </body>
+</html>
